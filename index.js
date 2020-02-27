@@ -25,7 +25,7 @@ function axiosCall(answers) {
         axios
             .get(queryURL).then(props => {
                 const userPicture = props.data[0].actor.avatar_url;
-                console.log(props.data[0].payload.commits[0].author.email)
+                const userEmail = props.data[0].payload.commits[0].author.email;
             })
 
 };
