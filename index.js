@@ -111,7 +111,7 @@ getReadMeData = async () => {
 function writeMyReadMe(answers, getReadMe) {
 
     let userGitHub = `https://github.com/${user}/${getReadMe.projectName}`
-    let dependStatus = `https://img.shields.io/${answers.greetings}/${user}/${getReadMe.projectName}`
+    let dependStatus = `https://img.shields.io/david/${user}/${getReadMe.projectName}`
     let versionNum = `https://img.shields.io/github/package-json/v/${user}/${getReadMe.projectName}`
     let axiosLicense = `https://img.shields.io/npm/l/axios`
     let dependBadge = `[![Dependency Status](${dependStatus})](${userGitHub})`
