@@ -16,4 +16,4 @@ Making a README generator using Node and GitHub's public event API call.
         
 
         
-**This README was made with readMeGen!**
+**This README was made with readMeGen!** (https://github.com/nick-ezell/readMeGen)
