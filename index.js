@@ -132,7 +132,10 @@ function writeMyReadMe(answers, getReadMe) {
     return `${badges}
         \n# GitHub\n"https://github.com/${user}"
         \n## Title\n${getReadMe.projectName}
-        \n## Description\n${getReadMe.description}`
+        \n## Description\n${getReadMe.description}
+        \n
+        \n
+        \n**This README was made with readMeGen!**`
 
 
 
@@ -154,19 +157,3 @@ async function init() {
 }
 
 init()
-
-
-// const writeFileAsync = util.promisify(fs.writeFile);
-
-// async function init() {
-//     console.log("Hi!")
-//     try {
-//       const answers = await promptUser();
-//       const html = generateHTML(answers)
-
-//       await writeFileAsync("index.html", html)
-//     } catch(err) {
-//       console.log(err);
-//     }
-//   }
-//   init();
