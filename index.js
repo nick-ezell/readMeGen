@@ -46,18 +46,29 @@ function getUserData(answers) {
 }
 
 getReadMeData = async () => {
+    console.log("Great! Now let's choose some badges.")
+
     return await inquirer
         .prompt([
             {
-                type: "checkbox",
-                name: "badges",
-                message: "Great! Now let's choose some badges.",
-                choices: ["Dependency Status", "Node License"]
+                type: "confirm",
+                name: "badgeOne",
+                message: "Include the Dependency Status badge?",
+            },
+            {
+                type: "confirm",
+                name: "badgeTwo",
+                message: "Include the Axios Node License badge?",
+            },
+            {
+                type: "confirm",
+                name: "badgeThree",
+                message: "Include the GitHub package.json version badge?",
             },
             {
                 type: "input",
                 name: "projectName",
-                message: "Great choice! So, what are we calling this project?"
+                message: "Awesome! 🤘  So, what are we calling this project?"
             },
             {
                 type: "input",
@@ -106,10 +117,19 @@ function writeMyReadMe(answers, getReadMe) {
     let dependBadge = `[![Dependency Status](${dependStatus})](${userGitHub})`
     let axiosBadge = `[![Node License](${axiosLicense})](${userGitHub})`
     let versionBadge = `[![Package Version](${versionNum})](${userGitHub})`
-    let badgeArr = getReadMe.badges
-    console.log(badgeArr)
+    let badges = ``;
 
-    return `${dependBadge}
+    if (getReadMe.badgeOne === true) {
+        badges += `\n` + dependBadge
+    } if (getReadMe.badgeTwo === true) {
+        badges += `\n` + axiosBadge
+    } if (getReadMe.badgeThree === true) {
+        badges += `\n` + versionBadge
+    }
+
+    console.log(badges)
+
+    return `${badges}
         \n# GitHub\n"https://github.com/${user}"
         \n## Title\n${getReadMe.projectName}
         \n## Description\n${getReadMe.description}`
@@ -118,12 +138,13 @@ function writeMyReadMe(answers, getReadMe) {
 
 }
 
+
 async function init() {
     try {
         const answers = await getUsername()
         getUserData(answers)
         const getReadMe = await getReadMeData()
-
+        // await getBadges(getReadMe)
         const readMe = writeMyReadMe(answers, getReadMe)
         console.log('readMe:', readMe)
         await writeFileAsync("./README.md", readMe)
