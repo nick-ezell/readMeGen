@@ -10,10 +10,37 @@
 readMeGen
         
 ## Description
-Making a README generator using Node and GitHub's public event API call.
+A CLI application for generating thorough README files that uses Node and the GitHub API.
+        
+### Contents
+
+        
+### Installation
+If package-lock.json and node_modules are not present, simply run "npm i" in the directory containing the generator. To use, enter "node index.js".
+        
+### Usage
+No building nukes with it, that's for sure.
+        
+### License(s)
+
+        
+### Contributors
+Developed solely by Nick Ezell.
+        
+### Tests
+N/A
+        
+### Questions
+
+        
+
+        
+![GitHub Photo](https://avatars.githubusercontent.com/u/57697731?)
+        
+![GitHub Email](nickolasezell@gmail.com)
         
 
         
 
         
-**This README was made with readMeGen!** (https://github.com/nick-ezell/readMeGen)
+**This README was made with readMeGen!**

@@ -75,36 +75,41 @@ getReadMeData = async () => {
                 name: "description",
                 message: "Sounds good! Tell me a little about it."
             },
-            // {
-            //     type: "",
-            //     name: "",
-            //     message: ""
-            // },
-            // {
-            //     type: "",
-            //     name: "",
-            //     message: ""
-            // },
-            // {
-            //     type: "",
-            //     name: "",
-            //     message: ""
-            // },
-            // {
-            //     type: "",
-            //     name: "",
-            //     message: ""
-            // },
-            // {
-            //     type: "",
-            //     name: "",
-            //     message: ""
-            // },
-            // {
-            //     type: "",
-            //     name: "",
-            //     message: ""
-            // }
+            {
+                type: "input",
+                name: "contents",
+                message: "Let's get a brief table of contents, lay it on me!"
+            },
+            {
+                type: "input",
+                name: "installation",
+                message: "Great! Now for some directions on installation."
+            },
+            {
+                type: "input",
+                name: "usage",
+                message: "Any restrictions for usage of your project?"
+            },
+            {
+                type: "input",
+                name: "license",
+                message: "Looking good! Have some licenses we should know about?"
+            },
+            {
+                type: "input",
+                name: "contributors",
+                message: "We've GOTTA give credit to those contributors! Drop those names here:"
+            },
+            {
+                type: "input",
+                name: "tests",
+                message: "Tests are a big part of effective coding! Got any you wanna add?"
+            },
+            {
+                type: "input",
+                name: "questions",
+                message: "Finally, we've some space for any questions or FAQs at the bottom!"
+            }
         ])
 }
 
@@ -133,6 +138,16 @@ function writeMyReadMe(answers, getReadMe) {
         \n# GitHub\n"https://github.com/${user}"
         \n## Title\n${getReadMe.projectName}
         \n## Description\n${getReadMe.description}
+        \n### Contents\n${getReadMe.contents}
+        \n### Installation\n${getReadMe.installation}
+        \n### Usage\n${getReadMe.usage}
+        \n### License(s)\n${getReadMe.license}
+        \n### Contributors\n${getReadMe.contributors}
+        \n### Tests\n${getReadMe.tests}
+        \n### Questions\n${getReadMe.questions}
+        \n
+        \n![GitHub Photo](${avatar})
+        \n![GitHub Email](${email})
         \n
         \n
         \n**This README was made with readMeGen!**`
